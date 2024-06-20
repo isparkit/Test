@@ -1,0 +1,1375 @@
+/*!
+Theme Name: Civitatis
+Theme URI: http://underscores.me/
+Author: Daniel Deudero Gracia
+Author URI: https://www.colordeu.es/
+Description: Tema para Magazine Civitatis
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: civitatis
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Civitatis is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+/* Interactive
+	 ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/* Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+:root {
+    --main-color: #F70759;
+    --p-color: #333;
+  }
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--p-color);
+}
+
+h2{
+    color: #333;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 40px; /* 125% */
+}
+
+header {
+    padding: 30px 0px;
+}
+
+.menu-civitatis{
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.menu-civitatis nav.navbar {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.megamenu-civitatis{
+    left: 0;
+    background-color: var(--main-color);    
+    text-transform: none;
+}
+
+.menu-civitatis ul{
+    text-transform: uppercase;
+    color: #666;
+}
+
+.menu-civitatis li.nav-item {
+    padding: 17px 20px;
+}
+
+.menu-civitatis ul li:hover{
+    background-color: var(--main-color);
+    color: #FFF;
+}
+.menu-civitatis ul li:hover a{
+    color: #FFF;
+    background: none;
+}
+
+.menu-civitatis .dropdown-menu{
+    border: none;
+    padding: 50px 0;
+    top: 71px;
+}
+
+.menu-civitatis .dropdown-toggle::after{
+    display: none;
+}
+.menu-civitatis .list-group-item{
+    border: none;
+}
+
+.megamenu-civitatis .list-group-item-action.main-cat {
+    font-weight: 800;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+
+.nav-item {
+    padding: 0.5rem 0xp;
+  }
+  
+  .dropdown-hover:hover>.dropdown-menu {
+    display: inline-block;
+  }
+  
+  .dropdown-hover>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+  }
+
+
+/* Componentes */
+.home-banner-slider .carousel-item div:first-child{
+    padding-right: 100px;
+}
+.home-banner-slider h2{
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 40px;
+    color: #333;
+    margin-top: 16px;
+}
+.home-banner-slider p{
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    margin: 32px 0px;
+}
+.home-banner-slider .carousel-indicators{
+    justify-content: start;
+    margin-left: 0;
+}
+.home-banner-slider .carousel-indicators [data-bs-target]{
+    margin-left: 0;
+    margin-right: 24px;
+    justify-content: start;
+    width: 28px;
+    height: 8px;
+    border-radius: 4px;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 4px;
+    background: rgba(204, 204, 204, 0.80);
+}
+
+.home-banner-slider .carousel-indicators .active{
+    background-color: #F70759;
+}
+
+.carousel-indicators [data-bs-target]{
+    margin-left: 0;
+    margin-right: 24px;
+    justify-content: start;
+    width: 28px;
+    height: 8px;
+    border-radius: 4px;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 4px;
+    background: rgba(204, 204, 204, 0.80);
+}
+
+.carousel-indicators .active{
+    background-color: #F70759;
+}
+
+.slidetoprank .carousel-indicators{
+    left: 0;
+    right: inherit;
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-left: 0;
+
+}
+
+.slidetoprank .img-destacada{
+	width: 100%;
+	max-height: 390px;
+	object-fit: cover;
+}
+
+button.btn-civitatis-outline-tag {
+    background: transparent;
+    border-radius: 22px;
+    padding: 6px 10px;
+    border: 1px solid #333;
+    margin-right: 8px;
+}
+
+
+.text-date{
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25.6px; /* 160% */
+}
+
+.related-posts .card-post,
+.top-destinos .card-post{
+    border: none;
+}
+
+.related-posts .card img{
+    height: 280px;
+    width: auto;
+}
+
+.content-post-absolute {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 12px 15px;
+    width: 100%;
+}
+
+.section-title h2{
+    color: var(--main-color);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 177.778% */
+    text-transform: uppercase;
+}
+
+.divider-line{
+    border-top: 1px solid #ccc;
+    margin: 40px 0px;
+}
+
+
+.top-rank-post h4{
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.top-rank-post .side-post{
+    padding-top: 8px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ccc;
+}
+
+.top-rank-post .side-post span{
+    font-size: 16px;
+    color: #666;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.toprankposts .carousel-indicators{
+    bottom: -40px;
+}
+
+.toprankposts .top-rank-post>div {
+    max-height: 450px;
+}
+
+.toprankposts .excerpt{
+    overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+}
+
+.post-tag, .post-categories {
+    font-size: 14px;
+}
+
+.card-body h5{
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 120% */
+    margin-top: 16px;
+}
+.top-destinos .card-body h5{
+    font-size: 30px;
+}
+
+
+.hover-animation {
+    position: relative;
+    align-self: stretch;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: cover;
+    max-width: 100%;
+    overflow: hidden;
+}
+.hover-animation img{
+    transition: transform .5s ease;
+}
+
+.hover-animation:hover img{
+    transform: scale(1.2);
+}
+
+.consejos-viajes .card-title,
+.actividades .card-title{
+    color: var(--main-color);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+}
+/* .consejos-viajes button{
+    color: var(--main-color);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+} */
+
+.consejos-viajes .card-text{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.consejos-viajes img{
+    max-height: 152px;
+    object-fit: cover;
+}
+
+.ult-posts-ciudad img{
+    max-height: 304px;
+    object-fit: cover;
+}
+
+.actividades .card-body{
+    background-color: white;
+}
+
+.actividad .tituloactividad,
+.actividad .precioactividad{
+    color: var(--main-color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: -0.32px;
+}
+
+.resenas .puntuacion{
+    color: var(--main-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+    letter-spacing: -0.32px;
+}
+
+.resenas .num-opniones{
+    color: #666;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px; /* 114.286% */
+    letter-spacing: -0.3px;
+}
+
+h5.colaboración{
+    color: #666;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px; /* 150% */
+    padding-top: 8px;
+}
+
+.btn-outline-primary{
+    border-radius: 1000px;
+    border: 1px solid var(--main-color);
+    background: white;
+    color: var(--main-color);
+    padding: 16px 32px;
+    width: auto;
+    margin: 0 auto;
+}
+.btn-outline-primary:hover{
+    border-radius: 1000px;
+    border: 1px solid white;
+    background: var(--main-color);
+    color: white;
+    padding: 16px 32px;
+}
+
+footer{
+    background:#333;
+}
+
+footer h5{
+    color: #CCC;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+footer .list-group-item,
+footer .contactar span.dispo{
+    background-color: inherit;
+    border: none;
+    color: #999;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22.4px; /* 140% */
+    letter-spacing: -0.32px;
+    padding: 8px 0px;
+}
+
+footer .contactar span{
+    color: #CCC;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22.4px; /* 140% */
+    letter-spacing: -0.32px;
+}
+footer .contactar span.dispo{
+    padding-left: 30px;
+}
+
+footer .num-valoracion{
+    color: #FFF;
+    font-size: 17.578px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 27px; /* 153.6% */
+    letter-spacing: -0.32px;
+}
+
+footer .opiniones{
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19.6px; /* 140% */
+    letter-spacing: -0.32px;
+}
+
+footer .condiciones .list-group-item{
+    color: #999;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22.4px; /* 160% */
+    letter-spacing: -0.32px;
+    padding-left: 8px;
+}
+
+.card img{
+    max-width: 100%;
+}
+
+.continente{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    height: 342px;
+}
+
+.continente h3{
+    color: var(--main-color);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 44px */
+    letter-spacing: -0.32px;
+}
+
+.btn-continente {
+    background: var(--main-color);
+    color: white;
+    border-radius: 1000px;
+    padding: 8px 16px;
+    margin-top: 16px;
+    color: #F5F4F5;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 13.2px */
+    letter-spacing: -0.32px;
+}
+.btn-continente:hover{
+    text-decoration: underline;
+    background: var(--main-color);
+    color: white;
+    /* border: 1px solid var(--main-color);
+    background: none;
+    color: var(--main-color); */
+}
+.btn-continente img {
+    padding-left: 8px;
+}
+.mapas .mapa-continente{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+.america{
+    /* background-image: url("../img/mapa-america.svg"); */
+    height: 342px;
+    background-repeat: no-repeat;
+}
+
+/*CATEOGIRAS*/
+.category .titulo h1{
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: 300;
+    color: #000;
+    text-transform: uppercase;
+}
+.category .titulo p{
+    font-size: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.destacado{
+    color: var(--main-color);
+}
+
+
+.button_arrow{
+    color: var(--main-color);
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.single .autor{
+    font-size: 18px
+}
+.single .autor .fecha-publi{
+    color: #666666;
+}
+
+.single .autor img {
+    max-height: 40px;
+    width: auto;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+
+.single .imagen-post img {
+    height: 552px;
+    object-fit: cover;
+}
+
+.single .contenido-post p {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+/* Author */
+.author .autor img {
+    width: 120px;
+    height: auto;
+}
+
+.author .autor .nombre {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.32px;
+    color: black;
+}
+.rrss img {
+    width: 30px !important;
+}
+
+.equipo-editorial{
+    background: #F5F4F5;
+}
+
+
+@media only screen and (max-width: 600px) {
+    nav .offcanvas{
+        background-color: var(--main-color);
+        align-items: center;
+    }
+    .offcanvas-header .btn-close {
+        position: absolute;
+        right: 10px;
+        top: 25px;
+        width: 30px;
+        height: 30px;
+        background: url('../img/ico-close-menu.svg') no-repeat;
+        opacity: 1;
+    }
+    .offcanvas-body{
+        width: 100%;
+        padding: 0;
+    }
+
+    .offcanvas-body .nav-item,
+    .offcanvas-body h5{
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+    }
+    .offcanvas-body .nav-item a,
+    .offcanvas-body .nav-item a.active,
+    .offcanvas-body h5{
+        color: white;
+    }
+
+    .navbar-nav .dropdown-menu{
+        background-color: #D3074C;
+        /* display: flex;
+        flex-wrap: wrap; */
+        justify-content: space-between;
+    }
+    .nav-item.dropdown a.show > .navbar-nav .dropdown-menu{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .offcanvas-body .nav-item .nav-link,
+    .offcanvas-body h5 {
+        padding-left: 20px;
+    }
+    .rrss{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .rrss h5{text-align: center;}
+
+    .offcanvas-body .navbar-nav .dropdown-menu li {
+        width: 30%;
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        text-align: left;
+        padding-left: 5px;
+    }
+    .navbar-nav .dropdown-menu a,
+    .nav-link:hover{
+        color: #CCC;
+    }
+    .navbar-nav .dropdown-menu{
+        border: none;
+    }
+
+    .nav-item {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .nav-link span {
+        color: #CCC;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    /* Menu movil */
+    /* .menu-movil .navbar-collapse {
+        width: 100%;
+        background: blue;
+        position: fixed;
+        z-index: 9;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s;
+    }
+      
+    .menu-movil ul.navbar-nav {
+          position: absolute;
+          top: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+    }
+    .menu-movil li {
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.58, 0.3, 0.005, 1);
+            padding: 0;
+            margin-bottom: 20px;
+    }
+    .menu-movil a {
+              color: white;
+              font-size: 40px;
+              padding: 0;
+    }
+
+    .menu-movil .show{
+        min-height: 100vh;
+        visibility: visible;
+        opacity: 1;
+        z-index: 9;
+    }
+
+    .menu-movil .show ul li {
+          opacity: 1;
+    }
+    .menu-movil .show ul li:nth-child(1){
+            transition-delay: 0.06s;
+    }   
+    .menu-movil .show ul li:nth-child(2) {
+            transition-delay: 0.12s;
+    }
+    .menu-movil .show ul li:nth-child(3){
+            transition-delay: 0.18s;
+    }
+    .menu-movil .show ul li:nth-child(4) {
+            transition-delay: 0.24s;
+    }
+    .menu-movil .show ul li:nth-child(5) {
+            transition-delay: 0.3s;
+    }
+    .menu-movil .show ul li:nth-child(6){
+        transition-delay: 0.36s;
+    } */
+
+    .navbar-toggler {
+        padding: 0;
+    }
+
+      
+
+    /* Fin Menú móvil */
+    .slidetoprank h2{
+        color: #333;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 30px; /* 136.364% */
+    }
+    .slidetoprank button{
+        color: #333;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10px; /* 100% */
+        text-transform: uppercase;
+    }
+    .logo-img{
+        width: 148px;
+        height: auto;
+    }
+    p{
+        color: #333;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+    }
+    .slidetoprank .carousel-indicators {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    .content-post-absolute{
+        padding: 0;
+    }
+
+    .related-posts .content-post-absolute {
+        position: relative;
+        color: black;
+        width: 100%;
+    }
+    .related-posts .card-body h5{
+        color: #333;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px; /* 114.286% */
+    }
+
+    .rpostabsolute-m .content-post-absolute {
+        position: absolute;
+        bottom: 0;
+        color: white;
+        padding: 12px 15px;
+        width: 100%;
+    }
+    .rpostabsolute-m .content-post-absolute h5{
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17.55px; /* 125.357% */
+    }
+    .consejos-viajes .card-text{
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17.55px; /* 125.357% */
+    }
+    .consejos-viajes .col {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .post-categories{
+        color: var(--main-color);
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 10px; /* 100% */
+        text-transform: uppercase;
+    }
+    .continente{
+        height: 540px;
+    }
+    .section-title h2{
+        color: var(--main-color);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px; /* 114.286% */
+        text-transform: uppercase;
+    }
+
+    #slidermapas {
+        background-color: #F5F4F5;
+        z-index: 0;
+        padding: 40px 40px;
+    }
+
+    #slidermapas .section-title h2{
+        color: #000;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 15px; /* 15.4px */
+        letter-spacing: -0.32px;
+        text-transform: uppercase;
+    }
+
+    .carousel-indicators{
+        margin-bottom: 3rem;
+    }
+
+    .top-destinos .card-body h5 {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%; /* 17.6px */
+        letter-spacing: -0.32px;
+    }
+
+    footer, footer .navbar{
+        background-color: #333333;
+    }
+    footer .nav-link,
+    footer .navbar-nav .nav-link.show,
+    footer h5{
+        color: #CCC;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 150% */
+    }
+    .dropdown-toggle::after{
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        width: 13px;
+        border-top: .5em solid;
+        border-right: .5em solid transparent;
+        border-left: .5em solid transparent;
+        border-bottom: 0;
+    }
+
+    footer .navbar-nav .dropdown-menu{
+        background-color: #333;
+    }
+    footer .navbar-nav .dropdown-menu a,
+    footer .nav-link:hover{
+        color: #CCC;
+    }
+    footer .navbar-nav .dropdown-menu{
+        border: none;
+    }
+
+    footer .nav-item {
+        border-bottom: 1px solid #ccc;
+    }
+
+    footer .nav-link span {
+        color: #CCC;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    footer .num-valoracion{
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+    footer .condiciones img{
+        max-width: 108px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    footer .condiciones ul {
+        list-style: none;
+        color: #ccc;
+        font-size: 10.4px;
+        font-weight: 300;
+        line-height: 16.64px;
+        letter-spacing: -0.3199999928474426px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    footer .condiciones ul li {
+        display: inline-block;
+        padding-right: 8px;
+    }
+
+}
+
+/* 07/06/2024 dev */
+
+#mega-menu-wrap-principal {
+    margin: 0 auto;
+}
+#menu-mega-europa-1, #menu-mega-europa{
+	list-style: none;
+    color: #fff;
+	padding: 0px;
+}
+
+.desktop-menu ul.mega-sub-menu > li {
+    max-width: 678px !important;
+    margin: auto !important;
+    float: none !important;
+}
+.desktop-menu ul.mega-sub-menu > li .menu-mega-europa-container .menu {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 10px 20px;
+}
+.desktop-menu ul.mega-sub-menu > li .menu-mega-europa-container .menu li {
+    width: calc(33% - 12px);
+}
+
+@media only screen and (min-width: 768px) {
+	
+	.desktop-menu #navbarhover{
+		display:block;
+	}
+	
+}
+
+@media only screen and (max-width: 767px) {
+	.mobile-device ul.mega-sub-menu > li .menu-mega-europa-container .menu {
+		display: flex;
+		flex-wrap: wrap;
+		grid-gap: 2px 10px;
+        
+	}
+	.mobile-device ul.mega-sub-menu > li .menu-mega-europa-container .menu li {
+		width: calc(30% - 12px);
+	}
+}
